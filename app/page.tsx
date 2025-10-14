@@ -6,6 +6,7 @@ export default function Home() {
       <main className="flex flex-col row-start-2 items-center sm:items-start">
         <p className="text-3xl">សូមស្វាគមន៍</p>
         <p className="text-3xl">សូមស្វាគមន៍ការគ្រប់គ្រងគ្រូបន្ទប់</p>
+        <p className="text-3xl">Hello, Welcome to the Education CMS</p>
       </main>
     </div>
   );
