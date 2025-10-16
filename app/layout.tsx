@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "React.js",
     "TypeScript",
     "Tailwind CSS",
-    "Free Education CMS"
+    "Free Education CMS",
   ],
 };
 
@@ -30,12 +31,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} antialiased`}
-      >
-        {children}
-        <Toaster />
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

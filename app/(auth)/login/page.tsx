@@ -1,3 +1,4 @@
+"use client";
 import React, { useTransition } from "react";
 import LoginForm from "@/features/auth/components/login-form";
 import { authClient } from "@/lib/auth-client";
