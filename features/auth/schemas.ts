@@ -8,6 +8,13 @@ export const loginSchema = z.object({
         .email("Please enter a valid email address")
 });
 
+export const otpSchema = z.object({
+    otp: z
+        .string()
+        .trim()
+        .min(1, "Please enter the 6 digit OTP sent to your email")
+});
+
 export const registerSchema = z.object({
     name: z
         .string()
